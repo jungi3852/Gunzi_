@@ -1,5 +1,10 @@
 import streamlit as st
+#
+st.title('This is a title')
+st.header("This is a header")
+st.subheader("This is a subheader")
 
-st.title('streamlit 입문')
-st.write('드디어 입문합니다')
-st.write("tlqkf 드가자")
+st.text("Hello World. Streamlit text")
+name='Jungi Lee'
+st.text(f'Hi, {name}')
+st.markdown("## This is markdown")
