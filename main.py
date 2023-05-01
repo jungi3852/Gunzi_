@@ -52,7 +52,7 @@ st.help(range)
 st.divider()
 
 st.subheader("pandas")
-df=pd.read_csv("C:/Users/jglee/Downloads/sample.csv")
+df=pd.read_csv("sample.csv")
 st.write("pandas로 csv파일을 불러오는 방법, streamlit에 출력하는 방법은 다음과 같습니다")
 code='''df=pd.read_csv('경로') #df:DataFrame을 의미
 st.dataframe(df)
