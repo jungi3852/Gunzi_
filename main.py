@@ -17,6 +17,7 @@ code='''from itertools import combinations
     a=[1,2,3,4,5]
     print(combinations(a,3))'''
 st.code(code, language='python')
+
 ppap='''
 여기서부터 st.markdown입니다 
 markdown은 마크업 언어의 일종으로 작년에 했던 colaboratory 에서 했던 문법을 지원합니다.
@@ -30,15 +31,35 @@ markdown은 마크업 언어의 일종으로 작년에 했던 colaboratory 에�
 \n여기까지가 st.markdown 입니다
 
 '''
+st.divider()
 st.markdown(ppap)
+st.divider()
+
+st.subheader("colored text")
 st.success("success입니다")
 st.warning("warning입니다")
 st.info("info입니다")
 st.error("error입니다")
 st.exception("exception입니다. 내용물을 입력하면 이 곳에 들어갑니다 볼드처리된 str:과 밑의 Traceback은 알아서 출력하는거같네요")
 
-
+st.divider()
 st.write("아래는 st.write(1+2)를 실행한 결과입니다")
 st.write(1+2)
-st.write("어래는 st.write(dir(st))를 실행한 모습입니다")
+st.write("아래는 st.write(dir(st))를 실행한 결과입니다")
 st.write(dir(st))
+st.write("아래는 st.help(range)를 실행한 결과입니다")
+st.help(range)
+st.divider()
+
+st.subheader("pandas")
+df=pd.read_csv("C:/Users/jglee/Downloads/sample.csv")
+st.write("pandas로 csv파일을 불러오는 방법, streamlit에 출력하는 방법은 다음과 같습니다")
+code='''df=pd.read_csv('경로') #df:DataFrame을 의미
+st.dataframe(df)
+#or
+st.dataframe(df.style.highlight_max(axis=0))
+st.table(df)'''
+st.code(code, language='python')
+st.dataframe(df)
+st.dataframe(df.style.highlight_max(axis=0))
+st.table(df)
