@@ -5,6 +5,11 @@ import pandas as pd
 #pandas와 stramlit 설치 완료
 #좌측 파일, 설정, 프로젝트, Python 인터프리터에서 다운받을 수 있음!
 st.title("프실 정리")
+intro='''
+2213 이준기
+A+은 안될까요
+'''
+st.text("2213 이준기")
 code='''st.title('title입니다')
 st.header("header입니다")
 st.subheader("subheader입니다")
@@ -133,9 +138,53 @@ if st.button("응애", key=2):
     st.write(f'Name: {name}')
 #key에 특별한 의미는 없는 것 같음... st.button(내용, key=뭐시기)
 #key가 같은게 여러개일 수는 없는듯, 오류남
+#중복 선택은 안되는 듯 합니다
+#st.button()은 true, false값을 가진다
 '''
 st.code(code,language='python')
 if st.button("응애", key=1):
     st.write(f'Name: {name}')
 if st.button("응애", key=2):
     st.write(f'Name: {name}')
+st.divider()
+
+
+st.header("radio button")
+code='''titan=st.radio('다음 중 에렌 예거가 소지한 거인이 아닌 것은?', ('진격의 거인','턱 거인','시조의 거인','전퇴의 거인'))
+if titan=="턱 거인":
+    st.success("정답입니다")
+else:st.error("오답입니다")
+#st.radio()는 특정 값(선택지)을 가진다
+'''
+st.code(code,language='python')
+titan=st.radio('다음 중 에렌 예거가 소지한 거인이 아닌 것은?', ('진격의 거인','턱 거인','시조의 거인','전퇴의 거인'))
+if titan=="턱 거인":
+    st.success("정답입니다")
+else:st.error("오답입니다")
+st.divider()
+
+
+st.header('checkbox')
+code='''cb=st.checkbox('눌러요')
+if cb is True:
+    st.write('잘했다')
+else:st.write('눌러라고')
+#st.checkbox는 true false값을 가진다'''
+st.code(code,language='python')
+cb=st.checkbox('눌러요')
+if cb is True:
+    st.write('잘했다')
+else:st.write('눌러라고')
+st.divider()
+
+
+st.header('selectbox')
+code='''selectlist=['아','무','거나','골라','요']
+sb=st.selectbox('선택해', selectlist)
+st.write(f'너가 선택한건 {sb}입니다')
+#st.selectlist()은 특정 값(선택지)를 가진다
+'''
+st.code(code,language='python')
+selectlist=['조서현','이준기','이용현','신지호','김강민']
+sb=st.selectbox('선택해', selectlist)
+st.write(f'당신의 남친은 {sb}입니다')
